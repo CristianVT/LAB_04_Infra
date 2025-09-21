@@ -16,7 +16,7 @@ provider "docker" {
 // app1
 resource "docker_container" "nginx-app1" {
   name  = "nginx-app1"
-  image = "nginx:1.29.1-bookworm"
+  image = "nginx:stable-perl"
 
   ports {
     internal = 80
@@ -27,7 +27,7 @@ resource "docker_container" "nginx-app1" {
 // app2
 resource "docker_container" "nginx-app2" {
   name  = "nginx-app2"
-  image = "nginx:1.29.1-bookworm"
+  image = "nginx:stable-perl"
 
   ports {
     internal = 80
@@ -38,7 +38,7 @@ resource "docker_container" "nginx-app2" {
 // app3
 resource "docker_container" "nginx-app3" {
   name  = "nginx-app3"
-  image = "nginx:1.29.1-bookworm"
+  image = "nginx:stable-perl"
 
   ports {
     internal = 80

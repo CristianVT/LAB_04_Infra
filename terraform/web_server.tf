@@ -10,3 +10,7 @@ resource "docker_container" "ubuntu" {
       name = docker_network.labnet.name
     }
 }
+
+resource "docker_container" "labnet" {
+  name = "labnet"  
+}
