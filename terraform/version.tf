@@ -20,7 +20,7 @@ resource "docker_container" "nginx-app1" {
 
   ports {
     internal = 80
-    external = 8080
+    external = 8083
   }
 }
 
