@@ -1,0 +1,21 @@
+---
+- name: Configurar NGINX como proxy
+  hosts: localhost
+  gather_facts: false
+  vars:
+    project_root: "{{ playbook_dir }}/.."
+    nginx_conf_host: "{project_root}/../host_volumenes/nginx/nginx.conf"
+    web_root_host: "{project_root}/../host_volumenes/web"
+    nginx_container: "nginx_proxy"
+
+  tasks:
+    - name: Crear directorio para configuración de NGINX
+      ansible.builtin.file:
+        path: {{file}}
+        state: directory
+        mode: '0755'
+    - name: Copiar la web
+      ansible.builtin.copy:
+        src: "files/index.html"
+        dest: "{{web_root_host}}/index.html"
+        mode: '0644'

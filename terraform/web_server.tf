@@ -9,6 +9,11 @@ resource "docker_container" "ubuntu" {
     networks_advanced {
       name = docker_network.labnet.name
     }
+
+    ports {
+      internal = 80
+      external = 8084
+    }
 }
 
 resource "docker_network" "labnet" {

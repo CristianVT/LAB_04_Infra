@@ -20,7 +20,7 @@ resource "docker_container" "nginx-app1" {
 
   ports {
     internal = 80
-    external = 8083
+    external = 8081
   }
 }
 
@@ -31,7 +31,7 @@ resource "docker_container" "nginx-app2" {
 
   ports {
     internal = 80
-    external = 8081
+    external = 8082
   }
 }
 
@@ -42,10 +42,9 @@ resource "docker_container" "nginx-app3" {
 
   ports {
     internal = 80
-    external = 8082
+    external = 8083
   }
 }
-
 
 // Imagen de Redis
 resource "docker_container" "redis" {
