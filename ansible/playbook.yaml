@@ -14,8 +14,15 @@
         path: {{file}}
         state: directory
         mode: '0755'
+
     - name: Copiar la web
       ansible.builtin.copy:
         src: "files/index.html"
         dest: "{{web_root_host}}/index.html"
+        mode: '0644'
+
+    - name: Copiar configuración del "nginx_proxy" NGINX
+      ansible.builtin.copy:
+        src: "files/nginx.conf"
+        dest: "{{nginx_conf_host}}/default.conf"
         mode: '0644'
