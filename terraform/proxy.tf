@@ -8,17 +8,17 @@ resource "docker_container" "proxy" {
 
     ports {
         internal = 80
-        external = 4000
+        external = 3001
     }
 
     volumes {
-        host_path      = abspath("${path.module}/../host_volumenes/nginx_conf")
+        host_path      = abspath("${path.module}/../host_volumes/nginx_conf")
         container_path = "/etc/nginx/conf.d"
         read_only      = false
     }
 
     volumes {
-        host_path      = abspath("${path.module}/../host_volumenes/web")
+        host_path      = abspath("${path.module}/../host_volumes/web")
         container_path = "/usr/share/nginx/html"
         read_only      = false
     }

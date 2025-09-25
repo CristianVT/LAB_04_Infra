@@ -11,7 +11,7 @@ terraform {
 provider "docker" {
   
 }
-
+/*
 // Imagen de Nginx para tres aplicaciones diferentes
 // app1
 resource "docker_container" "nginx-app1" {
@@ -84,3 +84,4 @@ resource "docker_container" "grafana" {
     external = 3000
   }
 }
+*/

@@ -4,8 +4,8 @@
   gather_facts: false
   vars:
     project_root: "{{playbook_dir}}/.."
-    nginx_conf_host: "{{project_root}}/host_volumenes/nginx_conf"
-    web_root_host: "{{project_root}}/host_volumenes/web"
+    nginx_conf_host: "{{project_root}}/host_volumes/nginx_conf"
+    web_root_host: "{{project_root}}/host_volumes/web"
     nginx_container: "nginx_proxy"
 
   tasks:
