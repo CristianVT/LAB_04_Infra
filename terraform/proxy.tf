@@ -6,8 +6,13 @@ resource "docker_container" "proxy" {
         name = docker_network.labnet.name
     }
 
+    ports {
+        internal = 80
+        external = 4000
+    }
+
     volumes {
-        host_path      = abspath("${path.module}/../host_volumenes/nginx.conf")
+        host_path      = abspath("${path.module}/../host_volumenes/nginx_conf")
         container_path = "/etc/nginx/conf.d"
         read_only      = false
     }

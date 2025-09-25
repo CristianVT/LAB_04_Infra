@@ -1,4 +1,4 @@
-resource "docker_container" "ubuntu" {
+resource "docker_container" "app" {
     name = "app"
     image = "hashicorp/http-echo:1.0"
 
