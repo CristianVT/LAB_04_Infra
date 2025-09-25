@@ -45,7 +45,7 @@ resource "docker_container" "nginx-app3" {
     external = 8083
   }
 }
-
+*/
 // Imagen de Redis
 resource "docker_container" "redis" {
   name = "redis"
@@ -84,4 +84,3 @@ resource "docker_container" "grafana" {
     external = 3000
   }
 }
-*/
