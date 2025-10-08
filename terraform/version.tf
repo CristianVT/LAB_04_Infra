@@ -11,12 +11,12 @@ terraform {
 provider "docker" {
   
 }
-/*
+
 // Imagen de Nginx para tres aplicaciones diferentes
 // app1
 resource "docker_container" "nginx-app1" {
   name  = "nginx-app1"
-  image = "nginx:stable-perl"
+  image = "nginx:1.29.2"
 
   ports {
     internal = 80
@@ -27,7 +27,7 @@ resource "docker_container" "nginx-app1" {
 // app2
 resource "docker_container" "nginx-app2" {
   name  = "nginx-app2"
-  image = "nginx:stable-perl"
+  image = "nginx:1.29.2"
 
   ports {
     internal = 80
@@ -38,18 +38,18 @@ resource "docker_container" "nginx-app2" {
 // app3
 resource "docker_container" "nginx-app3" {
   name  = "nginx-app3"
-  image = "nginx:stable-perl"
+  image = "nginx:1.29.2"
 
   ports {
     internal = 80
     external = 8083
   }
 }
-*/
+
 // Imagen de Redis
 resource "docker_container" "redis" {
   name = "redis"
-  image = "redis:8.2.1-bookworm"
+  image = "redis:8.2.2"
 
   ports {
     internal = 6379
@@ -60,7 +60,7 @@ resource "docker_container" "redis" {
 // Imagen de PostgreSQL
 resource "docker_container" "postgres" {
   name  = "postgres"
-  image = "postgres:18rc1"
+  image = "postgres:18.0-alpine3.22"
 
   env = [
     "POSTGRES_USER=upao",
@@ -77,7 +77,7 @@ resource "docker_container" "postgres" {
 // Imagen de Grafana
 resource "docker_container" "grafana" {
   name = "grafana"
-  image = "grafana/grafana:12.3.0-17814087142"
+  image = "grafana/grafana:12.3.0-18329792253-ubuntu"
 
   ports {
     internal = 3000
